@@ -1,5 +1,5 @@
-export const initialStore=()=>{
-  return{
+export const initialStore = () => {
+  return {
     message: null,
     todos: [
       {
@@ -11,10 +11,12 @@ export const initialStore=()=>{
         id: 2,
         title: "Do my homework",
         background: null,
-      }
-    ]
-  }
-}
+      },
+    ],
+    token: sessionStorage.getItem("token") || null,
+    user: null,
+  };
+};
 
 export default function storeReducer(store, action = {}) {
   switch(action.type){
@@ -32,6 +34,26 @@ export default function storeReducer(store, action = {}) {
         ...store,
         todos: store.todos.map((todo) => (todo.id === id ? { ...todo, background: color } : todo))
       };
+
+    case 'LOGIN':
+      return {
+        ...store,
+        token: action.payload,
+      };
+
+    case 'LOGOUT':
+      return {
+        ...store,
+        token: null,
+        user: null,
+      };
+
+    case 'SET_USER':
+      return {
+        ...store,
+        user: action.payload,
+      };
+
     default:
       throw Error('Unknown action.');
   }    
