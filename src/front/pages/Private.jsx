@@ -53,9 +53,15 @@ export const Private = () => {
                     <div className="card shadow border-0">
                         <div className="card-body p-4 p-md-5 text-center">
 
-                            <h2 className="mb-3">Zona privada</h2>
+                            <svg viewBox="0 0 100 100" style={{ maxWidth: "90px" }} className="mb-3">
+                                <circle cx="50" cy="50" r="45" fill="#198754" />
+                                <path d="M 30 52 L 44 66 L 70 36" fill="none" stroke="#fff"
+                                    strokeWidth="9" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+
+                            <h2 className="mb-3">Acceso concedido</h2>
                             <p className="text-muted">
-                                Estás autenticado y tu token es válido.
+                                Tu token es válido. Bienvenido a la zona privada.
                             </p>
 
                             <div className="bg-light rounded p-3 my-4">

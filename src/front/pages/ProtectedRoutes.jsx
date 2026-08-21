@@ -5,7 +5,7 @@ export const ProtectedRoutes = () => {
     const { store } = useGlobalReducer();
 
     if (!store.token) {
-        return <Navigate to="/login" replace />;
+        return <Navigate to="/denegado" replace />;
     }
 
     return <Outlet />;

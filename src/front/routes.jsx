@@ -13,6 +13,7 @@ import { Home } from "./pages/Home";
 import { Layout } from "./pages/Layout";
 import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo";
+import { AccesoDenegado } from "./pages/AccesoDenegado";
 
 
 export const router = createBrowserRouter(
@@ -30,6 +31,7 @@ export const router = createBrowserRouter(
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/denegado" element={<AccesoDenegado />} />
       <Route element={<ProtectedRoutes />}>
         <Route path="/private" element={<Private />} />
       </Route>
